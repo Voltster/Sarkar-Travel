@@ -1,0 +1,303 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-magnetik), ui-serif, Georgia, Cambria, serif;
+  --font-display: var(--font-magnetik), sans-serif;
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-brand-gradient: var(--brand-gradient);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-destructive: var(--destructive);
+
+  /* Text variables */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+
+  /* Semantic colors */
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+
+  /* Spacing Scale */
+  --space-1: var(--space-1);
+  --space-2: var(--space-2);
+  --space-3: var(--space-3);
+  --space-4: var(--space-4);
+  --space-5: var(--space-5);
+  --space-6: var(--space-6);
+  --space-8: var(--space-8);
+  --space-10: var(--space-10);
+  --space-12: var(--space-12);
+  --space-16: var(--space-16);
+  --space-20: var(--space-20);
+  --space-24: var(--space-24);
+
+  /* Radius Scale */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  /* Shadow Scale */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-brand: var(--shadow-brand);
+  --shadow-brand-lg: var(--shadow-brand-lg);
+  --shadow-airbnb: var(--shadow-airbnb);
+}
+
+:root {
+  /* TravelCore Premium Palette (Light Mode) */
+  --background: #FFFFFF;
+  --foreground: #181818;
+
+  --card: #FFFFFF;
+  --card-foreground: #181818;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #181818;
+
+  --primary: #E70000;
+  --primary-hover: #B90000;
+  --primary-light: #FACCCC;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #EA580C;
+  --secondary-foreground: #FFFFFF;
+
+  --brand-gradient: linear-gradient(135deg, #E70000, #EA580C);
+
+  --muted: #F8F8F8;
+  --muted-foreground: #666666;
+
+  --accent: #F8F8F8;
+  --accent-foreground: #181818;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #181818;
+
+  --radius: 0.75rem;
+  /* 12px default */
+
+  /* Text Colors */
+  --color-text-primary: #181818;
+  --color-text-secondary: #404040;
+  --color-text-tertiary: #666666;
+
+  /* Semantic Colors */
+  --color-success: #16A34A;
+  --color-warning: #EAB308;
+  --color-error: #DC2626;
+  --color-info: #3B82F6;
+
+  /* Radius Scale */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Spacing Scale (4px Base Grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.03), 0 1px 4px rgba(15, 23, 42, 0.02);
+  --shadow-lg: 0 10px 24px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.02);
+  --shadow-brand: 0 4px 12px rgba(231, 0, 0, 0.12), 0 2px 4px rgba(231, 0, 0, 0.06);
+  --shadow-brand-lg: 0 8px 24px rgba(231, 0, 0, 0.16), 0 4px 10px rgba(231, 0, 0, 0.08);
+  --shadow-airbnb: 0 6px 20px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.dark {
+  /* TravelCore Premium Palette (Dark Mode) */
+  --background: #020617;
+  --foreground: #F8FAFC;
+
+  --card: #0F172A;
+  --card-foreground: #F8FAFC;
+
+  --popover: #0F172A;
+  --popover-foreground: #F8FAFC;
+
+  --primary: #EF4444;
+  --primary-hover: #EF4444;
+  --primary-light: #FACCCC;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #F97316;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #0F172A;
+  --muted-foreground: #64748B;
+
+  --accent: #0F172A;
+  --accent-foreground: #F8FAFC;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #334155;
+  --input: #334155;
+  --ring: #F87171;
+
+  /* Text Colors */
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-text-tertiary: #64748B;
+
+  /* Shadows in Dark Mode (Flat) */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-brand: none;
+  --shadow-brand-lg: none;
+  --shadow-airbnb: none;
+
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen bg-[#fbfbfb] dark:bg-black;
+  }
+
+  .page-container {
+    @apply container mx-auto px-4 max-w-7xl;
+  }
+
+  .page-hero {
+    @apply rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur;
+  }
+
+  .section-card {
+    @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-airbnb dark:shadow-none;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-semibold text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.leathershadow {
+  box-shadow: 0 12px 64px 0 rgba(255, 255, 255, 0.48) inset;
+}
+
+.border-radius {
+  border-radius: 88px 88px 24px 24px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* FeaturedJourneys Swiper Pagination Styling */
+.featured-bullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #cbd5e1; /* slate-300 */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .featured-bullet {
+  background-color: #334155; /* slate-700 */
+}
+
+.featured-bullet-active {
+  width: 24px;
+  background-color: #dc2626; /* red-600 */
+}
+
+.dark .featured-bullet-active {
+  background-color: #ef4444; /* red-500 */
+}
