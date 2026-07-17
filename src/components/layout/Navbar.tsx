@@ -9,6 +9,7 @@ import Image from "next/image";
 import { getWishlist, getCompareList } from "@/lib/storage";
 import { useDestinations } from "@/hooks/useDestinations";
 import { usePackages } from "@/hooks/usePackages";
+import { DiyaToggle } from "@/components/shared";
 
 const baseNavLinks: { label: string; href: string; submenu?: { label: string; href: string }[] }[] = [
   { label: "Flight", href: "/flight" },
@@ -291,6 +292,7 @@ export function Navbar() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-4">
+            <DiyaToggle />
             <Link
               href="/wishlist"
               className="hidden md:flex relative p-2 text-slate-700 hover:text-black transition-colors rounded-full hover:bg-slate-100"

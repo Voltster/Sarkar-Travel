@@ -40,8 +40,8 @@ const magnetik = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ananta Travels",
-  description: "Premium Travel Experiences",
+  title: "Ananta Yatras | Sacred Pilgrimages & Spiritual Journeys",
+  description: "Embark on a divine journey of a lifetime. Experience meticulously curated Yatras, Char Dham, Jyotirlinga, Devi Shaktipeeths, and spiritual retreats across the timeless land of Bharat.",
 };
 
 export const dynamic = "force-dynamic";
@@ -55,8 +55,9 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${magnetik.variable}`}>
       <body
         suppressHydrationWarning
-        className="antialiased font-sans bg-white dark:bg-slate-950 text-slate-900 dark:text-white"
+        className="antialiased font-sans bg-background text-foreground"
       >
+        <div className="diya-overlay" />
         <ScrollToTop />
         <Navbar />
         {children}

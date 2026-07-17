@@ -46,16 +46,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-black text-white overflow-hidden">
-      {/* ── Unique: Giant background watermark ── */}
+    <footer className="relative bg-zinc-950 text-white overflow-hidden">
+      {/* ── Ambient Tricolor Glows (Saffron, White, Green) ── */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FF9933]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#128807]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
+
+      {/* ── Unique: Giant background watermark with Tricolor Gradient ── */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span className="text-[25vw] font-bold text-white/[0.015] tracking-tighter whitespace-nowrap leading-none translate-y-12">
+        <span className="text-[25vw] font-bold tracking-tighter whitespace-nowrap leading-none translate-y-12 bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807] bg-clip-text text-transparent opacity-[0.02]">
           ANANTA
         </span>
       </div>
 
-      {/* ── Unique: Top gradient accent line ── */}
-      <div className="h-1 w-full bg-gradient-to-r from-red-700 via-red-500 to-orange-500" />
+      {/* ── Unique: Top gradient accent line (Indian Tricolor) ── */}
+      <div className="h-1 w-full bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807]" />
 
       {/* ── Main Footer Content ── */}
       <div className="relative z-10 container mx-auto px-4 py-16 lg:py-20">
@@ -93,7 +98,7 @@ export default function Footer() {
                   key={item.label}
                   href={item.href}
                   aria-label={item.label}
-                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-red-500/50 hover:bg-red-500/10 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
                 >
                   <item.icon className="w-4 h-4" strokeWidth={1.5} />
                 </a>
@@ -113,7 +118,7 @@ export default function Footer() {
                     href={link.href}
                     className="group flex items-center text-sm text-white/60 hover:text-white transition-colors duration-200"
                   >
-                    <span className="inline-block w-0 group-hover:w-3 h-px bg-red-500 mr-0 group-hover:mr-2 transition-all duration-300" />
+                    <span className="inline-block w-0 group-hover:w-3 h-px bg-primary mr-0 group-hover:mr-2 transition-all duration-300" />
                     {link.label}
                   </Link>
                 </li>
@@ -132,7 +137,7 @@ export default function Footer() {
                 href="mailto:Contact@anantatravels.com"
                 className="group flex items-start gap-4 text-white/60 hover:text-white transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-red-500/30 group-hover:bg-red-500/5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
                   <Mail className="w-4 h-4" strokeWidth={1.5} />
                 </div>
                 <div>
@@ -145,7 +150,7 @@ export default function Footer() {
                 href="tel:+91987654321"
                 className="group flex items-start gap-4 text-white/60 hover:text-white transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-red-500/30 group-hover:bg-red-500/5 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center flex-shrink-0 group-hover:border-primary/30 group-hover:bg-primary/5 transition-all duration-300">
                   <Phone className="w-4 h-4" strokeWidth={1.5} />
                 </div>
                 <div>
@@ -198,7 +203,7 @@ export default function Footer() {
       <button
         onClick={scrollToTop}
         aria-label="Scroll to top"
-        className="absolute bottom-8 right-8 w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center text-white/50 hover:text-white hover:border-red-500/50 hover:bg-red-500/10 transition-all duration-300 z-50 group"
+        className="absolute bottom-8 right-8 w-11 h-11 rounded-full bg-white/5 border border-white/10 backdrop-blur-md flex items-center justify-center text-white/50 hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 z-50 group"
       >
         <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
       </button>

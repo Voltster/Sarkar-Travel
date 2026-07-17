@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Marcellus&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -7,14 +8,15 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-magnetik), ui-serif, Georgia, Cambria, serif;
-  --font-display: var(--font-magnetik), sans-serif;
+  --font-serif: var(--font-marcellus), ui-serif, Georgia, Cambria, serif;
+  --font-display: var(--font-cinzel), sans-serif;
 
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-primary-light: var(--primary-light);
   --color-secondary: var(--secondary);
   --color-brand-gradient: var(--brand-gradient);
+  --color-gold: var(--gold);
 
   --color-border: var(--border);
   --color-input: var(--input);
@@ -73,50 +75,54 @@
 }
 
 :root {
-  /* TravelCore Premium Palette (Light Mode) */
-  --background: #FFFFFF;
-  --foreground: #181818;
+  /* TravelCore Premium Palette (Spiritual Chandan & Kesar Theme) */
+  --font-marcellus: "Marcellus", serif;
+  --font-cinzel: "Cinzel", serif;
+
+  --background: #FAF6F0; /* Warm Chandan/Sandalwood cream */
+  --foreground: #1E120A; /* Deep Charcoal Sandalwood */
 
   --card: #FFFFFF;
-  --card-foreground: #181818;
+  --card-foreground: #1E120A;
 
   --popover: #FFFFFF;
-  --popover-foreground: #181818;
+  --popover-foreground: #1E120A;
 
-  --primary: #E70000;
-  --primary-hover: #B90000;
-  --primary-light: #FACCCC;
+  --primary: #E25822; /* Kesariya/Saffron */
+  --primary-hover: #C54410;
+  --primary-light: #FDF2E9;
   --primary-foreground: #FFFFFF;
 
-  --secondary: #EA580C;
-  --secondary-foreground: #FFFFFF;
+  --secondary: #D4AF37; /* Swarna Gold */
+  --secondary-foreground: #1E120A;
 
-  --brand-gradient: linear-gradient(135deg, #E70000, #EA580C);
+  --gold: #D4AF37;
 
-  --muted: #F8F8F8;
-  --muted-foreground: #666666;
+  --brand-gradient: linear-gradient(135deg, #E25822, #D4AF37);
 
-  --accent: #F8F8F8;
-  --accent-foreground: #181818;
+  --muted: #F5EFE6;
+  --muted-foreground: #6B5E55;
+
+  --accent: #F7EFE5;
+  --accent-foreground: #1E120A;
 
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
 
-  --border: #E2E8F0;
-  --input: #E2E8F0;
-  --ring: #181818;
+  --border: #E8DFD5;
+  --input: #E8DFD5;
+  --ring: #E25822;
 
   --radius: 0.75rem;
-  /* 12px default */
 
   /* Text Colors */
-  --color-text-primary: #181818;
-  --color-text-secondary: #404040;
-  --color-text-tertiary: #666666;
+  --color-text-primary: #1E120A;
+  --color-text-secondary: #47362B;
+  --color-text-tertiary: #6E5C50;
 
   /* Semantic Colors */
   --color-success: #16A34A;
-  --color-warning: #EAB308;
+  --color-warning: #D4AF37;
   --color-error: #DC2626;
   --color-info: #3B82F6;
 
@@ -127,7 +133,7 @@
   --radius-xl: 16px;
   --radius-full: 9999px;
 
-  /* Spacing Scale (4px Base Grid) */
+  /* Spacing Scale */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -142,59 +148,57 @@
   --space-24: 96px;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
-  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.03), 0 1px 4px rgba(15, 23, 42, 0.02);
-  --shadow-lg: 0 10px 24px rgba(15, 23, 42, 0.04), 0 2px 8px rgba(15, 23, 42, 0.02);
-  --shadow-brand: 0 4px 12px rgba(231, 0, 0, 0.12), 0 2px 4px rgba(231, 0, 0, 0.06);
-  --shadow-brand-lg: 0 8px 24px rgba(231, 0, 0, 0.16), 0 4px 10px rgba(231, 0, 0, 0.08);
-  --shadow-airbnb: 0 6px 20px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
+  --shadow-sm: 0 1px 2px rgba(30, 18, 10, 0.03), 0 1px 3px rgba(30, 18, 10, 0.02);
+  --shadow-md: 0 4px 12px rgba(30, 18, 10, 0.04), 0 1px 4px rgba(30, 18, 10, 0.02);
+  --shadow-lg: 0 10px 24px rgba(30, 18, 10, 0.06), 0 2px 8px rgba(30, 18, 10, 0.03);
+  --shadow-brand: 0 4px 12px rgba(226, 88, 34, 0.12), 0 2px 4px rgba(226, 88, 34, 0.06);
+  --shadow-brand-lg: 0 8px 24px rgba(226, 88, 34, 0.16), 0 4px 10px rgba(226, 88, 34, 0.08);
+  --shadow-airbnb: 0 6px 20px rgba(30, 18, 10, 0.06), 0 2px 6px rgba(30, 18, 10, 0.03);
 }
 
 .dark {
-  /* TravelCore Premium Palette (Dark Mode) */
-  --background: #020617;
-  --foreground: #F8FAFC;
+  /* TravelCore Premium Palette (Spiritual Sandalwood Night Theme) */
+  --background: #120904;
+  --foreground: #FCFAF7;
 
-  --card: #0F172A;
-  --card-foreground: #F8FAFC;
+  --card: #1D120B;
+  --card-foreground: #FCFAF7;
 
-  --popover: #0F172A;
-  --popover-foreground: #F8FAFC;
+  --popover: #1D120B;
+  --popover-foreground: #FCFAF7;
 
-  --primary: #EF4444;
-  --primary-hover: #EF4444;
-  --primary-light: #FACCCC;
-  --primary-foreground: #FFFFFF;
+  --primary: #FF8A3D; /* Bright Kesar */
+  --primary-hover: #E25822;
+  --primary-light: #30170A;
+  --primary-foreground: #120904;
 
-  --secondary: #F97316;
-  --secondary-foreground: #FFFFFF;
+  --secondary: #E5C158; /* Swarna Gold */
+  --secondary-foreground: #120904;
 
-  --muted: #0F172A;
-  --muted-foreground: #64748B;
+  --gold: #E5C158;
 
-  --accent: #0F172A;
-  --accent-foreground: #F8FAFC;
+  --muted: #24150D;
+  --muted-foreground: #A89B90;
 
-  --destructive: #DC2626;
-  --destructive-foreground: #FFFFFF;
+  --accent: #2A1A10;
+  --accent-foreground: #FCFAF7;
 
-  --border: #334155;
-  --input: #334155;
-  --ring: #F87171;
+  --border: #3A2214;
+  --input: #3A2214;
+  --ring: #E5C158;
 
   /* Text Colors */
-  --color-text-primary: #F8FAFC;
-  --color-text-secondary: #94A3B8;
-  --color-text-tertiary: #64748B;
+  --color-text-primary: #FCFAF7;
+  --color-text-secondary: #CBBFB5;
+  --color-text-tertiary: #A29285;
 
-  /* Shadows in Dark Mode (Flat) */
+  /* Shadows in Dark Mode (Warm subtle glow) */
   --shadow-sm: none;
   --shadow-md: none;
   --shadow-lg: none;
   --shadow-brand: none;
   --shadow-brand-lg: none;
   --shadow-airbnb: none;
-
 }
 
 @layer base {
@@ -295,9 +299,55 @@ button {
 
 .featured-bullet-active {
   width: 24px;
-  background-color: #dc2626; /* red-600 */
+  background-color: var(--primary);
 }
 
 .dark .featured-bullet-active {
-  background-color: #ef4444; /* red-500 */
+  background-color: var(--primary);
+}
+
+/* Spiritual Custom Classes */
+.gold-glow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.gold-border {
+  border-color: var(--secondary);
+}
+
+.bg-mandala {
+  background-image: radial-gradient(circle at center, rgba(212, 175, 55, 0.03) 0%, transparent 70%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(to right, #E25822, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gold-gradient {
+  background: linear-gradient(to right, #FF8A3D, #E5C158);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Diya glow animation and overlay */
+.diya-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: color-burn;
+  opacity: 0;
+  background: radial-gradient(circle at bottom, rgba(253, 186, 116, 0.7), transparent 70%);
+  transition: opacity 1.5s ease-in-out;
+}
+
+.diya-active .diya-overlay {
+  opacity: 0.25;
+}
+
+.diya-active {
+  filter: sepia(0.08) saturate(1.1) contrast(0.97);
+  transition: filter 1.5s ease-in-out;
 }

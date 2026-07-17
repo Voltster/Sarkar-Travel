@@ -28,6 +28,7 @@ export interface StayInfo {
   roomType?: string;
   mealPlan?: string;
   location?: string;
+  image?: string;
 }
 
 export interface WhatsInsideItem {

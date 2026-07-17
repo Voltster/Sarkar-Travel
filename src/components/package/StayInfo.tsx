@@ -32,11 +32,21 @@ export function StayInfo({ stayInfo }: StayInfoProps) {
             <h3 className="text-2xl font-semibold tracking-tight text-slate-900 dark:text-white mb-6">Where you'll sleep</h3>
             <div className="border border-slate-200 dark:border-slate-800 rounded-2xl p-6 bg-white dark:bg-slate-900 shadow-sm flex flex-col md:flex-row gap-6">
                 
-                {/* Hotel Icon Placeholder (Airbnb style square image placeholder) */}
-                <div className="w-full md:w-48 h-32 rounded-xl bg-slate-100 dark:bg-slate-800 flex flex-col items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
-                    <BedDouble className="w-10 h-10 text-slate-400 mb-2" strokeWidth={1} />
-                    <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Accommodation</span>
-                </div>
+                {/* Hotel Image or Icon Placeholder */}
+                {stayInfo.image ? (
+                    <div className="w-full md:w-48 h-32 rounded-xl overflow-hidden shrink-0 border border-slate-200 dark:border-slate-700">
+                        <img 
+                            src={stayInfo.image} 
+                            alt={stayInfo.hotelName || "Accommodation"} 
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                ) : (
+                    <div className="w-full md:w-48 h-32 rounded-xl bg-slate-100 dark:bg-slate-800 flex flex-col items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+                        <BedDouble className="w-10 h-10 text-slate-400 mb-2" strokeWidth={1} />
+                        <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Accommodation</span>
+                    </div>
+                )}
                 
                 {/* Hotel Details */}
                 <div className="flex-1 flex flex-col justify-center">

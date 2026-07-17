@@ -7,3 +7,4 @@ export { CompareButton } from "./CompareButton";
 export { FilterSidebar } from "./FilterSidebar";
 export { FloatingSupport } from "./FloatingSupport";
 export { Pagination } from "./Pagination";
+export { DiyaToggle } from "./DiyaToggle";

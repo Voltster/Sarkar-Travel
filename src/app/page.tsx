@@ -13,6 +13,9 @@ import { getPublicDestinations, getHomepageDestinations } from "@/lib/api/destin
 import { getHomepagePackages, getFeaturedPackages } from "@/lib/api/packages";
 import { getPublicTestimonials } from "@/lib/api/testimonials";
 import { getPublicBanners } from "@/lib/api/banners";
+import { destinations as staticDestinations } from "@/data/destinations";
+import { packages as staticPackages } from "@/data/packages";
+import { SpiritualQuote } from "@/components/home/SpiritualQuote";
 
 export const dynamic = "force-dynamic";
 
@@ -30,12 +33,12 @@ const FALLBACK_TRIP_IMAGES = [
 export default async function Home() {
   // ── Fetch data ──────────────────────────────────────────────────────────────
   const [
-    { destinations: homepageDestinations },
-    { packages: homepagePackages },
-    { packages: featuredPackages },
+    { destinations: rawHomepageDestinations },
+    { packages: rawHomepagePackages },
+    { packages: rawFeaturedPackages },
     { testimonials },
     { banners },
-    { destinations: allDestinations }
+    { destinations: rawAllDestinations }
   ] = await Promise.all([
     getHomepageDestinations(),
     getHomepagePackages(),
@@ -44,6 +47,11 @@ export default async function Home() {
     getPublicBanners(),
     getPublicDestinations({ limit: 200 }),
   ]);
+
+  const homepageDestinations = rawHomepageDestinations && rawHomepageDestinations.length > 0 ? rawHomepageDestinations : staticDestinations;
+  const homepagePackages = rawHomepagePackages && rawHomepagePackages.length > 0 ? rawHomepagePackages : staticPackages;
+  const featuredPackages = rawFeaturedPackages && rawFeaturedPackages.length > 0 ? rawFeaturedPackages : staticPackages;
+  const allDestinations = rawAllDestinations && rawAllDestinations.length > 0 ? rawAllDestinations : staticDestinations;
 
   const mappedBanners = (banners || []).map((b: any) => ({
     id: b.id,
@@ -161,9 +169,10 @@ export default async function Home() {
 
   // ── Page ────────────────────────────────────────────────────────────────────
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background text-foreground bg-mandala">
       <HeroSection />
       <InfinityBanner />
+      <SpiritualQuote />
       <TopPackagesCarousel initialPackages={homepagePackages} />
       <FeaturedJourneys packages={featuredPackagesMapped} />
       <ExploreDestinations destinations={exploreDestinationsMapped} />
