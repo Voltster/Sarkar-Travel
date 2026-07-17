@@ -19,17 +19,17 @@ const destinations = [
 export function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Rotating background images of spiritual Indian landmarks
-  const bgImages = [
-    "https://images.unsplash.com/photo-1561361513-2d000a50f0db?auto=format&fit=crop&w=2000&q=80", // Varanasi Ghats
-    "https://images.unsplash.com/photo-1626621341515-bbf8a96e980a?auto=format&fit=crop&w=2000&q=80", // Kedarnath Peak / Temple
-    "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?auto=format&fit=crop&w=2000&q=80", // Golden Temple Amritsar
+  // Rotating background video and image media of spiritual Indian landmarks
+  const bgMedia = [
+    { type: "video", url: "https://www.pexels.com/download/video/27413987/" },
+    { type: "video", url: "https://www.pexels.com/download/video/32919071/" },
+    { type: "image", url: "https://images.pexels.com/photos/11539838/pexels-photo-11539838.jpeg" },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % bgImages.length);
-    }, 8000);
+      setCurrentImage((prev) => (prev + 1) % bgMedia.length);
+    }, 10000); // 10s gives video clips plenty of time to show
     return () => clearInterval(interval);
   }, []);
 
@@ -38,21 +38,32 @@ export function HeroSection() {
       {/* ═══════════════════════════════════════
           CINEMATIC BACKGROUND
           ═══════════════════════════════════════ */}
-      {/* Animated background images */}
-      {bgImages.map((img, i) => (
+      {/* Animated background videos & images */}
+      {bgMedia.map((media, i) => (
         <div
-          key={img}
+          key={media.url}
           className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${i === currentImage ? "opacity-100" : "opacity-0"
             }`}
         >
-          <Image
-            src={img}
-            alt="Spiritual Yatra Destination"
-            fill
-            className="object-cover brightness-75"
-            priority={i === 0}
-            sizes="100vw"
-          />
+          {media.type === "video" ? (
+            <video
+              src={media.url}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="object-cover w-full h-full brightness-50 scale-105"
+            />
+          ) : (
+            <Image
+              src={media.url}
+              alt="Spiritual Yatra Destination"
+              fill
+              className="object-cover brightness-50 scale-105"
+              priority={i === 0}
+              sizes="100vw"
+            />
+          )}
           {/* Multi-layer Gradient Overlay */}
           <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-transparent z-10 scale-110" />
           <div className="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-black/20 z-10 scale-110" />
@@ -61,8 +72,8 @@ export function HeroSection() {
       ))}
 
       {/* Gradient overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/80" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/15 to-black/80" /> */}
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" /> */}
 
       {/* Subtle vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.5)_100%)]" />
@@ -168,16 +179,16 @@ export function HeroSection() {
       {/* Side decorative elements (desktop) */}
       <div className="hidden xl:block absolute left-8 top-1/2 -translate-y-1/2 z-10">
         <div className="flex flex-col gap-4">
-          {["01", "02", "03"].map((num, i) => (
+          {bgMedia.map((_, i) => (
             <button
-              key={num}
+              key={i}
               onClick={() => setCurrentImage(i)}
               className={`text-xs font-bold transition-all duration-300 ${i === currentImage
                 ? "text-amber-400 text-lg"
                 : "text-white/30 hover:text-white/60"
                 }`}
             >
-              {num}
+              {`0${i + 1}`}
             </button>
           ))}
         </div>

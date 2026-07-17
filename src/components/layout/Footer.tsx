@@ -48,19 +48,19 @@ export default function Footer() {
   return (
     <footer className="relative bg-zinc-950 text-white overflow-hidden">
       {/* ── Ambient Tricolor Glows (Saffron, White, Green) ── */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FF9933]/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#128807]/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-white/[0.02] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#FF9933]/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#128807]/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-white/[0.04] rounded-full blur-[130px] pointer-events-none" />
 
       {/* ── Unique: Giant background watermark with Tricolor Gradient ── */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-        <span className="text-[25vw] font-bold tracking-tighter whitespace-nowrap leading-none translate-y-12 bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807] bg-clip-text text-transparent opacity-[0.02]">
+        <span className="text-[25vw] font-bold tracking-tighter whitespace-nowrap leading-none translate-y-12 bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807] bg-clip-text text-transparent opacity-[0.04]">
           ANANTA
         </span>
       </div>
 
       {/* ── Unique: Top gradient accent line (Indian Tricolor) ── */}
-      <div className="h-1 w-full bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807]" />
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#FF9933] via-[#FFFFFF] to-[#128807] relative z-10 shadow-[0_2px_20px_rgba(255,153,51,0.4)]" />
 
       {/* ── Main Footer Content ── */}
       <div className="relative z-10 container mx-auto px-4 py-16 lg:py-20">
@@ -174,7 +174,9 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom Bar ── */}
-      <div className="relative z-10 border-t border-white/[0.06]">
+      <div className="relative z-10 border-t border-white/[0.08]">
+        {/* Subtle Bottom Tricolor Accent Line */}
+        <div className="h-[2px] w-full bg-gradient-to-r from-[#FF9933]/30 via-white/30 to-[#128807]/30" />
         <div className="container mx-auto px-4 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col items-center md:items-start gap-1.5">
             <p className="text-xs text-white/25 text-center md:text-left">

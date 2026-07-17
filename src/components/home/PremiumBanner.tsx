@@ -65,7 +65,7 @@ export const PremiumBanner = ({ data }: BannerProps) => {
   const current = data[index];
 
   return (
-    <section className="relative w-full bg-white dark:bg-slate-950">
+    <section className="relative w-full bg-amber-200/5 dark:bg-slate-950">
       <div
         className="relative w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 group"
         onMouseEnter={() => setIsHovered(true)}

@@ -172,8 +172,8 @@ export default async function Home() {
     <main className="min-h-screen bg-background text-foreground bg-mandala">
       <HeroSection />
       <InfinityBanner />
-      <SpiritualQuote />
       <TopPackagesCarousel initialPackages={homepagePackages} />
+      <SpiritualQuote />
       <FeaturedJourneys packages={featuredPackagesMapped} />
       <ExploreDestinations destinations={exploreDestinationsMapped} />
       {/* <ContentCarousel
